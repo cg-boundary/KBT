@@ -89,7 +89,7 @@ class ShaderHandler:
     _HANDLERS = {}
 
     @classmethod
-    def add(cls, cbfunc:Callable, cbargs:Tuple, space:SPACE_TYPES, regtype:SPACE_TYPES, drawtype:DRAW_TYPES):
+    def add(cls, cbfunc:Callable, cbargs:Tuple, space:SPACE_TYPES, regtype:REGION_TYPES, drawtype:DRAW_TYPES):
         if isinstance(cbfunc, Callable) and isinstance(cbargs, tuple):
             if space in SPACE_TYPES and regtype in REGION_TYPES and drawtype in DRAW_TYPES:
                 key = keygen()
@@ -119,7 +119,7 @@ class ShaderHandler:
 
     def setup(self):
         space = self.space.value
-        self.handle = space.draw_handler_add(self._wrapper, self.cbargs, self.regtype.value, self.drawtype.value)
+        self.handle = space.draw_handler_add(self._wrapper, tuple(), self.regtype.value, self.drawtype.value)
         if self.handle:
             self.is_valid = True
             return True
@@ -136,7 +136,7 @@ class ShaderHandler:
         if self.key in ShaderHandler._HANDLERS:
             del ShaderHandler._HANDLERS[self.key]
 
-    def _wrapper(self, *args):
+    def _wrapper(self):
         if self.is_valid:
             if callable(self.cbfunc):
                 if isinstance(self.cbargs, tuple):

@@ -10,6 +10,7 @@ from . import graphics
 from . import handlers
 from . import labels
 from . import maths
+from . import modal
 from . import modules
 from . import props
 from . import screen
