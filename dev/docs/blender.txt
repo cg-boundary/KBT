@@ -1,0 +1,25 @@
+
+---------------------------------------------------------------------------------------------------
+
+bpy.context.window (Window)
+└── window.screen (Screen)
+    ├── screen.areas (Area)
+    │   ├── area.regions (Region)
+    │   │   └── region.ui_type (UI block, toolbar, header, etc.)
+    │   └── area.spaces (Space)
+    │       └── space_data (active space type, e.g. VIEW_3D, NODE_EDITOR, IMAGE_EDITOR)
+    └── (other areas …)
+
+
+for window in bpy.context.window_manager.windows:
+    screen = window.screen
+    for area in screen.areas:
+        if area.type == 'TEXT_EDITOR':
+            for space in area.spaces:
+                if space.type == 'TEXT_EDITOR':
+                    print(f"Space - Pointer - {space.as_pointer()}")
+            for region in area.regions:
+                if region.type == 'WINDOW':
+                    print(f"Region - Pointer - {region.as_pointer()}")
+
+---------------------------------------------------------------------------------------------------

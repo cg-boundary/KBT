@@ -1,0 +1,4 @@
+
+Blender 5.0
+mklink /D "C:\Users\Kenzo\AppData\Roaming\Blender Foundation\Blender\5.0\scripts\addons\KBT" "C:\Users\Kenzo\laboratory\Repos\KBT"
+
