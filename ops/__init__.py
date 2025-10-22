@@ -22,8 +22,14 @@ def register():
     for cls in CLASSES:
         register_class(cls)
 
+    from . import demo
+    demo.register()
+
 
 def unregister():
     from bpy.utils import unregister_class
     for cls in reversed(CLASSES):
         unregister_class(cls)
+
+    from . import demo
+    demo.unregister()
