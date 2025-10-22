@@ -1,12 +1,66 @@
+----------------------------------------------------------------------------------------------------------------------------[GOAL - 1]
+
+A collection of tools that assist in scripting and automation task
+Includes a library of code to work with
+Final result would be a fast scripting system
+Code templates and text block properties to set the build order
+
+----------------------------------------------------------------------------------------------------------------------------[GOAL - 2]
+
+A collection of scripts that procedurally generate models
 
 ----------------------------------------------------------------------------------------------------------------------------[OPS]
 
-R&D - Operators
+R&D Static
+    - Test out bmesh
+
+R&D Modal
+    - Build UI System
+
+Text Editor
+    - Autocomplete
+
+Auto Script
+    - Text Editor Panel Operator
+    - Convert script into registerable addon with user prefs settings
 
 ----------------------------------------------------------------------------------------------------------------------------[INTERFACE]
 
-N-Panel - 3D View
+N-Panel 3D View
+    - Add static and modal Operators
+
+N-Panel Text Editor
+    - Make library searchable
 
 ----------------------------------------------------------------------------------------------------------------------------[UTILS]
 
-Labels  - Menu system
+Label
+    - Menu system
+
+Geofade
+    - Points | Lines | Tris
+    - Planes | Matrices
+
+Ray
+    - All ray cast create a ray info object
+        - Could just be a tuple of data / named tuple / what ever is fast
+    - Ray visualizers
+        - Fade out | Start and end colors | Hit normal fade
+    - Vertex | Edge | Face | Curves | Meta
+        - Direct | Center | Ends
+    - Plane Cast
+    - Scene Cast
+    - Object Cast
+    - Mouse Cast
+    - Point Cast
+
+MeshEditor
+    - Handle object and edit mode
+    - BVH and KD tree creation
+    - Ray casting
+    - Mesh graphics
+    1) restore_mesh ()
+    2) update_mesh  ()
+    3) save_mesh    ()
+    4) undo_mesh    ()
+    5) close        ()

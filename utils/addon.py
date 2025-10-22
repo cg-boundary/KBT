@@ -10,8 +10,7 @@ import bpy
 
 def get_addon_name():
     from .. import bl_info
-    name = bl_info['name']
-    return name
+    return bl_info['name']
 
 
 def user_prefs():
