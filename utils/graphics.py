@@ -58,9 +58,9 @@ def get_text_max_height(size:int):
 
 def get_text_descender_height(size:int):
     blf.size(0, int(size * screen_factor()))
-    standard = blf.dimensions(0, "ABC123!`")[1]
-    descend = blf.dimensions(0, ALPHANUMERIC)[1]
-    return descend - standard
+    full_descend = blf.dimensions(0, ALPHANUMERIC)[1]
+    none_descend = blf.dimensions(0, "ABC123!`")[1]
+    return full_descend - none_descend
 
 # ------------------------------------------------------------------------------- #
 # TYPES
